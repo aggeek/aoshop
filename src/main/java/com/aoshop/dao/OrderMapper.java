@@ -1,7 +1,9 @@
 package com.aoshop.dao;
 
-
 import com.aoshop.pojo.Order;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface OrderMapper {
     int deleteByPrimaryKey(Integer id);
@@ -15,4 +17,14 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);
+
+    Order selectByUserIdAndOrderNo(@Param("userId") Integer userId, @Param("orderNo") Long orderNo);
+
+    List<Order> selectByUserId(Integer userId);
+
+    List<Order> selectAllOrder();
+
+    Order selectByOrderNo(Long orderNo);
+
 }
+

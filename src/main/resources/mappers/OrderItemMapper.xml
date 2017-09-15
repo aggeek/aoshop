@@ -195,6 +195,13 @@
     </foreach>
   </insert>
 
+  <select id="selectByOrderNo" resultMap="BaseResultMap" parameterType="Long">
+    select
+    <include refid="Base_Column_List"/>
+    from mmall_mmall_order_item
+    where order_no = #{orderNo}
+  </select>
+
 
 
 
